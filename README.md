@@ -1,2 +1,2 @@
-# EJS_AUTH
 # PASSPORT-LOCAL
+using passport local strategy
