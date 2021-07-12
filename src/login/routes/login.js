@@ -28,7 +28,7 @@ router.post('/',async(req,res,next)=>{
     const { error } = validate(bodyData)
     if(error) return res.status(400).send({Error:error.details[0].message}) 
     
-    let existsUser = await userModel.findOne({ wherer : { UserEmail : bodyData.UserEmail }})
+    let existsUser = await userModel.findOne({ where : { UserEmail : bodyData.UserEmail }})
     if(!existsUser) return res.status(404).send({ msg : 'Data Not Found !!' })
     
     passport.authenticate('local',(err,user,info)=>{
